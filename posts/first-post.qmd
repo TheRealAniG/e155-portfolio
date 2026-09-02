@@ -1,0 +1,15 @@
+---
+title: "Goals"
+description: "My goals for the semester in E155"
+author: "Anirudh Gupta"
+date: 2026-09-02
+categories:
+  - reflection
+draft: false
+---
+
+1. Improve critical thinking and debugging skills
+2. Learn how to work collaboratively in Git
+3. Learn how to use microcontrollers and FPGAs
+4. Learn how to design embedded systems
+5. Gain enough skills to get a job

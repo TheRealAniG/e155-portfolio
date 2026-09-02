@@ -1,0 +1,15 @@
+---
+title: "E155 Portfolio"
+image: images/headshot.png
+about:
+    template: jolla
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          href: https://www.linkedin.com/in/anirudhgupta2/
+        - icon: github
+          text: Github
+          href: https://github.com/TheRealAniG
+---
+
+Hi! I'm Anirudh Gupta, a senior at Harvey Mudd College, majoring in Engineering. I'm interested in electrical and computer engineering and I am excited to be in MicroPs this semester. I have experience working at Blue origin and NASA as well as doing research at Penn State. I am also a former competitive tennis player. Some of my hobbies include movies/TV shows, music, and food.
