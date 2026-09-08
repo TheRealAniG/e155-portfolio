@@ -84,6 +84,27 @@
     "text": "Goals\n\n\nMy goals for the semester in E155\n\n\n\n\n\nSep 2, 2026\n\n\nAnirudh Gupta\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "labs/lab1/lab1.html",
+    "href": "labs/lab1/lab1.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In this lab, a design was implemented on the FPGA to to turn 2 LEDs on and off based on 4 switch inputs, as well as to display on a 7 segment display 16 hexadecimal values based on the switch inputs. A LED was also blinked at 2.4Hz using the on board high speed oscillator. The oscillator was configured at a frequency of 48MHz, and a counter was used to divide the frequency down to 2.4Hz."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#block-diagram",
+    "href": "labs/lab1/lab1.html#block-diagram",
+    "title": "Introduction",
+    "section": "Block Diagram",
+    "text": "Block Diagram\n\n\n\nFigure 1: Block Diagram\n\n\nThe block diagram in Figure 1 shows the the design of the system. The top level contains the internal oscillator module, the blinker/counter module, and the segment decoder module. The inputs are the switches and reset, and it toggles the 7-segment and LEDs as output. It also outputs the oscillator for easy viewing."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#schematic",
+    "href": "labs/lab1/lab1.html#schematic",
+    "title": "Introduction",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 2: Schematic\n\n\nThe schematic in Figure 2 shows the wiring of the 7 segment display to the FPGA. The segments are connected to the FPGA pins through current limiting resistors to prevent excess current from flowing through the segments. The forward voltage of the segments is 2.0V, and the voltage supplied is 3.3V. The voltage across the resistor is 1.3V, and the goal was 5-20 mA. A resisor value of 150 ohms was chosen to achieve a current of 8.67 mA, which is within the desired range."
+  },
+  {
     "objectID": "posts/first-post.html",
     "href": "posts/first-post.html",
     "title": "Goals",
