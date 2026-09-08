@@ -32,7 +32,7 @@
     "href": "labs/lab1/lab1.html#schematic",
     "title": "Introduction",
     "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 2: Schematic\n\n\nThe schematic in Figure 2 shows the wiring of the 7 segment display to the FPGA. The segments are connected to the FPGA pins through current limiting resistors to prevent excess current from flowing through the segments. The forward voltage of the segments is 2.0V, and the voltage supplied is 3.3V. The voltage across the resistor is 1.3V, and the goal was 5-20 mA. A resisor value of 150 ohms was chosen to achieve a current of 8.67 mA, which is within the desired range."
+    "text": "Schematic\n\n\n\nFigure 2: Schematic\n\n\nThe schematic in Figure 2 shows the wiring of the 7 segment display to the FPGA. The segments are connected to the FPGA pins through current limiting resistors to prevent excess current from flowing through the segments. The forward voltage of the segments is 2.0V, and the voltage supplied is 3.3V. The voltage across the resistor is 1.3V, and the goal was 5-20 mA. A resistor value of 150 ohms was chosen to achieve a current of 8.67 mA (1.3V/150Ω), which is within the desired range."
   },
   {
     "objectID": "index.html",
