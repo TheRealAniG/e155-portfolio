@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "labs/**/*.qmd"
 
 website:
   title: "E155 Portfolio"
