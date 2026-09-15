@@ -105,6 +105,34 @@
     "text": "Lab 7: The Advanced Encryption Standard\nLab 7"
   },
   {
+    "objectID": "labs/lab2/lab2.html",
+    "href": "labs/lab2/lab2.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In this lab, a design was implemented on the FPGA to display two independent hexadecimal numbers on a dual-segment display using two, four input DIP switches. Both digits were driven by a time multiplexed decoder module. Additionally, a scanning circuit was implemented to rotate outputs between 1000, 0100, 0010, and 0001 at a rate of 2Hz. These outputs were attatched to the rows of a keypad, and the inputs were attatched to the columns of the keypad. The result is that when a row is toggled and a column is pressed, a corresponding on-board LED will light up."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#block-diagram",
+    "href": "labs/lab2/lab2.html#block-diagram",
+    "title": "Introduction",
+    "section": "Block Diagram",
+    "text": "Block Diagram\n\n\n\nFigure 1: Block Diagram\n\n\nThe block diagram in Figure 1 shows the the design of the system. The top level contains the internal oscillator module, the counter module, the segment decoder module, and the keypad scanner module. It also contains combinational logic to control the 2 digit display and the keypad scanner. The top module controls both the dual segment functionality and the keypad scanner functionality."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#schematics",
+    "href": "labs/lab2/lab2.html#schematics",
+    "title": "Introduction",
+    "section": "Schematics",
+    "text": "Schematics\n\n\n\nFigure 2: Dual Seven Segment Schematic\n\n\nThe schematic in Figure 2 shows the wiring for the dual segment circuitry. This includes the two 4 input DIP switches, and the reset signal. Using these inputs the fpga controls the two 7 segments displays by sending the appropriate signals to the segments and controlling the power to each display. Pullup resistors are used on the DIP switches.\n\n\n\nFigure 3: Keypad Scanner Schematic\n\n\nThe schematic in Figure 3 shows the wiring for the keypad scanner. This includes the column inputs and the row outputs to control the NPN transistors. Pullup resistors are used on the column inputs."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#calculations",
+    "href": "labs/lab2/lab2.html#calculations",
+    "title": "Introduction",
+    "section": "Calculations",
+    "text": "Calculations\nThe FPGA pins have a maximum current rating of 8mA IOL and -8mA IOH. This means that the maximum current that can be sourced or sunk by a pin is 8mA. Additionally, the pins supply 3.3V. The base-emitter saturation voltage of both the NPN and PNP transistors is around 0.7V which is used as the forward voltage. A resistor value of 620 Ohms was chosen to limit the current below the 8mA threshold.\n\\[\nI = \\frac{3.3V - 0.7V}{620\\ \\Omega} = 4.19\\text{ mA}\n\\]"
+  },
+  {
     "objectID": "posts/first-post.html",
     "href": "posts/first-post.html",
     "title": "Goals",
