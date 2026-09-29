@@ -133,6 +133,27 @@
     "text": "Calculations\nThe FPGA pins have a maximum current rating of 8mA IOL and -8mA IOH. This means that the maximum current that can be sourced or sunk by a pin is 8mA. Additionally, the pins supply 3.3V. The base-emitter saturation voltage of both the NPN and PNP transistors is around 0.7V which is used as the forward voltage. A resistor value of 620 Ohms was chosen to limit the current below the 8mA threshold.\n\\[\nI = \\frac{3.3V - 0.7V}{620\\ \\Omega} = 4.19\\text{ mA}\n\\]"
   },
   {
+    "objectID": "labs/lab4/lab4.html",
+    "href": "labs/lab4/lab4.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In this lab, a design was implemented on the MCU to drive a speaker using square waves. I implemented timer functionality on the MCU to drive the speaker using pairs of frequency and duration information. The final design plays Fur Elise and a custom tune."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#schematic",
+    "href": "labs/lab4/lab4.html#schematic",
+    "title": "Introduction",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 1: Speaker Schematic\n\n\nThe schematic in Figure 1 shows the full circuit design for the lab. The GPIO pin outputs into the potentiometer to adjust the volume. The output of the potentiometer goes into an LM386 audio amplifier which then drives the speaker."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#calculations",
+    "href": "labs/lab4/lab4.html#calculations",
+    "title": "Introduction",
+    "section": "Calculations",
+    "text": "Calculations\n\n\n\nFigure 2\n\n\n\n\n\nFigure 3\n\n\nCalculations Spreadsheet: Google Sheets\nFigures 2 and 3 show documentation and calculations demonstrating how durations and pitches are derived from the timer configurations. Calculations demonstrate that the system can create 220 Hz and 1000 Hz pitches within 1% accuracy.\nCalculations for minimum duration, maximum duration, minimum frequency, and maximum frequency are also shown in Figures 2 and 3.\nThe spreadsheet shows that all notes in Fur Elise can be played within 1 % accuracy. All the notes are within error bounds, however checking at 220 Hz and 1000 Hz is not sufficient because the song has a note with a frequency of 1319 Hz, which is outside of the range."
+  },
+  {
     "objectID": "posts/first-post.html",
     "href": "posts/first-post.html",
     "title": "Goals",

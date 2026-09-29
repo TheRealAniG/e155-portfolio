@@ -122,8 +122,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a></li>
+  </ul></li>
+  <li><a href="#results-and-documentation" id="toc-results-and-documentation" class="nav-link" data-scroll-target="#results-and-documentation">Results and Documentation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype-summary" id="toc-ai-prototype-summary" class="nav-link" data-scroll-target="#ai-prototype-summary">AI Prototype Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -131,8 +146,66 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this lab, a design was implemented on the MCU to drive a speaker using square waves. I implemented timer functionality on the MCU to drive the speaker using pairs of frequency and duration information. The final design plays Fur Elise and a custom tune.</p>
+</section>
+<section id="design-and-testing-methodology" class="level1">
+<h1>Design and Testing Methodology</h1>
+<p>The design was implemented using C code on an STMicro MCU. The design enables a GPIO pin to output a square wave of varying frequencies and durations to drive the speaker. The output of the pin goes into a potentiometer to adjust the volume. The output of the potentiometer goes into an LM386 audio amplifier which then drives the speaker.</p>
+<p>This design built off of the clock configuration starter code. The code had completed FLASH and GPIO functionality, but the RCC had to completed to create a 80 Mhz clock. I also had to implement the timer functionality to generate the square waves of varying frequencies and durations. The code was created using .h files to configure the hardware and .c files to implement the functionality. The main.c file is what puts everything together to play the songs. The timers I chose to implement were the most basic timers on the MCU (TIM6 and TIM7).</p>
+<p>In order to test the design, I first tested the output of the GPIO pin to ensure it was generating the correct square waves. Once I ensured that was correct, I built the rest of the speaker circuit in order to drive the speaker and play the songs.</p>
+</section>
+<section id="technical-documentation" class="level1">
+<h1>Technical Documentation</h1>
+<p>GitHub Repository: <a href="https://github.com/TheRealAniG/e155-lab4/tree/dev">e155-lab4 GitHub Repository</a></p>
+<section id="schematic" class="level2">
+<h2 class="anchored" data-anchor-id="schematic">Schematic</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/schematic.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: Speaker Schematic</figcaption>
+</figure>
+</div>
+<p>The schematic in Figure 1 shows the full circuit design for the lab. The GPIO pin outputs into the potentiometer to adjust the volume. The output of the potentiometer goes into an LM386 audio amplifier which then drives the speaker.</p>
+</section>
+<section id="calculations" class="level2">
+<h2 class="anchored" data-anchor-id="calculations">Calculations</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/calc1.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 2</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/calc2.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 3</figcaption>
+</figure>
+</div>
+<p>Calculations Spreadsheet: <a href="https://docs.google.com/spreadsheets/d/1y0T6E2hisK-LrxJCk4ecTsmUzGSWyLcUjOgePXpkAKg/edit?usp=sharing">Google Sheets</a></p>
+<p>Figures 2 and 3 show documentation and calculations demonstrating how durations and pitches are derived from the timer configurations. Calculations demonstrate that the system can create 220 Hz and 1000 Hz pitches within 1% accuracy.</p>
+<p>Calculations for minimum duration, maximum duration, minimum frequency, and maximum frequency are also shown in Figures 2 and 3.</p>
+<p>The spreadsheet shows that all notes in Fur Elise can be played within 1 % accuracy. All the notes are within error bounds, however checking at 220 Hz and 1000 Hz is not sufficient because the song has a note with a frequency of 1319 Hz, which is outside of the range.</p>
+</section>
+</section>
+<section id="results-and-documentation" class="level1">
+<h1>Results and Documentation</h1>
+<p>The design performed exactly as expected. It was able to play Fur Elise with the correct timing and pitch. All the rests played properly, and the circuity matched expectations. I was able to use a potentiometer to adjust the volume of the speaker. I was also able to add another compositions and verify that it worked on the hardware.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Lab 4 was successful, everything worked as intended. I was able to successfully program the MCU using C code and drive the speaker. I spent around 15 hours on this lab.</p>
+</section>
+<section id="ai-prototype-summary" class="level1">
+<h1>AI Prototype Summary</h1>
+<p>I used ChatGPT Plus for this task.</p>
+<p>ChatGPT gave me a good response. In my code I used the most basic timers, TIM6 and TIM7. I used these timers because I felt like they would be the most simple to implement and they would simplify the code the most while still meeting the specs.</p>
+<p>ChatGPT recommended I could use TIM15 and TIM16. These timers are more complicated but offer more functionality. They can work as a timer, but also directy control GPIO PWM generation. This is a better design because it allows for output to be controlled by hardware rather than doing it internally by software.</p>
+<p>Overall, the approach that ChatGPT gave me was probably the better solution, but it would have been potentially more complicated to implement.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
