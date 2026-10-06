@@ -14,6 +14,27 @@
     "text": "Course Website"
   },
   {
+    "objectID": "labs/lab5/lab5.html",
+    "href": "labs/lab5/lab5.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In this lab I used an MCU to determine the angular velocity of a brushed DC motor by reading from a quadrature encoder using interrupts. Design was implemented using C code on the STM32 MCU."
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#schematic",
+    "href": "labs/lab5/lab5.html#schematic",
+    "title": "Introduction",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 1: Motor Schematic\n\n\nThe schematic in Figure 1 shows the full circuit design for the lab. The motor is powered by an external power supply that can vary voltage in order to change motor speed."
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#calculations-and-flowchart",
+    "href": "labs/lab5/lab5.html#calculations-and-flowchart",
+    "title": "Introduction",
+    "section": "Calculations and Flowchart",
+    "text": "Calculations and Flowchart\n\n\n\nFigure 2\n\n\n\n\n\nFigure 3\n\n\n\n\n\nFigure 4\n\n\n\n\n\nFigure 5\n\n\nFigure 2 shows that the measured speed and direction match the observed motor speed and direction\nFigure 3 shows how raw encoder pulses and their timing are converted into a velocity in rev/s and a direction. It also includes calculations to back up the update rate and resolution of velocity achieved.\nFigure 4 shows a flowchart illustrating the main loop and the interrupt handler, and how they communicate. Essentially, the main loop utilizes the encoder state values which is updated by the interrupt handler.\nFigure 5 compares the performance of interrupt-based code to manual polling at high speeds, and quantitatively explains why there may be issues with polling at high speeds."
+  },
+  {
     "objectID": "labs/lab1/lab1.html",
     "href": "labs/lab1/lab1.html",
     "title": "Introduction",
