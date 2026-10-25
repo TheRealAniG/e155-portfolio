@@ -122,8 +122,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#waveform" id="toc-waveform" class="nav-link" data-scroll-target="#waveform">Waveform</a></li>
+  </ul></li>
+  <li><a href="#results-and-documentation" id="toc-results-and-documentation" class="nav-link" data-scroll-target="#results-and-documentation">Results and Documentation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype-summary" id="toc-ai-prototype-summary" class="nav-link" data-scroll-target="#ai-prototype-summary">AI Prototype Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -131,8 +146,58 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this lab I used C to program an STM32 MCU to build an IoT device. I implemented SPI functionality on the MCU to communicate with a temperature sensor. I interacted with a WiFi modile over UART to write an HTML page.</p>
+</section>
+<section id="design-and-testing-methodology" class="level1">
+<h1>Design and Testing Methodology</h1>
+<p>In this lab I used the STM32 MCU, ESP8266 WiFi module, and a DS1722 Digital Thermometer. The STM32 MCU was responsible for reading the temperature sensor via SPI and sending the data to the ESP8266 module over UART. The ESP8266 module then served an HTML page displaying the temperature data. The HTML page was also used to control an on board LED.</p>
+<p>In order to complete this lab, I first programmed the SPI functionality in C. I then tested the SPI functions by connecting an oscilliscope to the MCU pins to verify that I was getting the correct waveforms. After confirming the SPI communication, I wired the temperature sensor to the MCU and verified that I had a full correct SPI read transaction (CE, SCK, SDO, SDI). Once I verified the temperature sensor and the MCU were able to communicate, I integrated the temperature data with the ESP8266 module over UART and tested the HTML page to ensure it correctly displayed the temperature data and controlled the on board LED. I did this lab part by part to make the debugging process easier.</p>
+<p>I also used CMSIS device templates for my source code files. The ESP8266 module connected easily into the motherboard, and the DS1722 consisted of simple wiring to the MCU.</p>
+</section>
+<section id="technical-documentation" class="level1">
+<h1>Technical Documentation</h1>
+<p>GitHub Repository: <a href="https://github.com/TheRealAniG/e155-lab6">e155-lab6 GitHub Repository</a></p>
+<section id="schematic" class="level2">
+<h2 class="anchored" data-anchor-id="schematic">Schematic</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/schematic.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: SPI Communication Schematic</figcaption>
+</figure>
+</div>
+<p>The schematic in Figure 1 shows the full circuit design for the lab. The DS1722 temperature sensor is connected to the STM32 MCU via SPI. The ESP8266 WiFi module is connected to the MCU directly on the motherboard.</p>
+</section>
+<section id="waveform" class="level2">
+<h2 class="anchored" data-anchor-id="waveform">Waveform</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/waveforms.JPG" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: SPI Waveforms</figcaption>
+</figure>
+</div>
+<p>Figure 2 shows an oscilloscope output capturing a full SPI read transaction with the DS1722 temperature sensor (CE,SCK,SDO,SDI).</p>
+</section>
+</section>
+<section id="results-and-documentation" class="level1">
+<h1>Results and Documentation</h1>
+<p>The design performed exactly as expected. It was able to accurately communicate with the DS1722 temperature sensor via SPI and successfully transmit the data to the ESP8266 WiFi module over UART. The HTML page correctly displayed the temperature data and controlled the on board LED.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Lab 6 was successful, everything worked as intended. I was able to successfully program the MCU using C code and communicate with the DS1722 temperature sensor via SPI, transmitting the data to the ESP8266 WiFi module over UART. I spent around 20 hours on this lab.</p>
+</section>
+<section id="ai-prototype-summary" class="level1">
+<h1>AI Prototype Summary</h1>
+<p>I gave two prompts to ChatGPT Plus:</p>
+<p>1.I’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.</p>
+<p>2.Write me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.</p>
+<p>For the first prompt it created a web page which looked significantly nicer than the one I made. The outputs were all intuitive and made sense and it was aethetically pleasing. I think AI is very good at making websites/apps.</p>
+<p>For the second prompt it created resonable and clean code. The code looked good, but I wasn’t able to inegrate it with the rest of my code easily since it was written with a slightly different design in mind.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

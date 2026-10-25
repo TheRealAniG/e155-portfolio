@@ -175,6 +175,27 @@
     "text": "Calculations\n\n\n\nFigure 2\n\n\n\n\n\nFigure 3\n\n\nCalculations Spreadsheet: Google Sheets\nFigures 2 and 3 show documentation and calculations demonstrating how durations and pitches are derived from the timer configurations. Calculations demonstrate that the system can create 220 Hz and 1000 Hz pitches within 1% accuracy.\nCalculations for minimum duration, maximum duration, minimum frequency, and maximum frequency are also shown in Figures 2 and 3.\nThe spreadsheet shows that all notes in Fur Elise can be played within 1 % accuracy. All the notes are within error bounds, however checking at 220 Hz and 1000 Hz is not sufficient because the song has a note with a frequency of 1319 Hz, which is outside of the range."
   },
   {
+    "objectID": "labs/lab6/lab6.html",
+    "href": "labs/lab6/lab6.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "In this lab I used C to program an STM32 MCU to build an IoT device. I implemented SPI functionality on the MCU to communicate with a temperature sensor. I interacted with a WiFi modile over UART to write an HTML page."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#schematic",
+    "href": "labs/lab6/lab6.html#schematic",
+    "title": "Introduction",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 1: SPI Communication Schematic\n\n\nThe schematic in Figure 1 shows the full circuit design for the lab. The DS1722 temperature sensor is connected to the STM32 MCU via SPI. The ESP8266 WiFi module is connected to the MCU directly on the motherboard."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#waveform",
+    "href": "labs/lab6/lab6.html#waveform",
+    "title": "Introduction",
+    "section": "Waveform",
+    "text": "Waveform\n\n\n\nFigure 2: SPI Waveforms\n\n\nFigure 2 shows an oscilloscope output capturing a full SPI read transaction with the DS1722 temperature sensor (CE,SCK,SDO,SDI)."
+  },
+  {
     "objectID": "posts/first-post.html",
     "href": "posts/first-post.html",
     "title": "Goals",
